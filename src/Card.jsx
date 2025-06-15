@@ -1,16 +1,7 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import "./index.css";
 
-const Card = ({
-  setup,
-  punchline,
-  funny,
-  humorless,
-  funnyBtn,
-  humorlessBtn,
-}) => {
-  // console.log("card.jsx", funnyBtn, humorlessBtn);
-
+function Card({setup, punchline, handleFunnyClick, handleHumorlessClick, humorlessBtnDisabled, funnyBtnDisabled}){
   return (
     <div className="container">
       <p>{setup}</p>
@@ -18,15 +9,16 @@ const Card = ({
         <span>{punchline}</span>
       </p>
       <div className="buttons">
-        <button onClick={humorless} disabled={humorlessBtn}>
+        <button disabled={humorlessBtnDisabled} onClick={handleHumorlessClick}>
           😏
         </button>
-        <button onClick={funny} disabled={funnyBtn}>
+        <button disabled={funnyBtnDisabled} onClick={handleFunnyClick}>
           🤣
         </button>
       </div>
-    </div>
-  );
-};
+    </div> 
+)}
+
+
 
 export default Card;

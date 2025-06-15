@@ -61,7 +61,6 @@ const Display = () => {
     setJokes(updatedJokes);
   }
 
-  // };
 
   return (
     <>
